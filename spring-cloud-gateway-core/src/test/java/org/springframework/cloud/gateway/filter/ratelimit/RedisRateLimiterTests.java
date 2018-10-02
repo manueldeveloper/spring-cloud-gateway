@@ -2,6 +2,7 @@ package org.springframework.cloud.gateway.filter.ratelimit;
 
 import java.util.UUID;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ public class RedisRateLimiterTests extends BaseWebClientTests {
 	@Autowired
 	private RedisRateLimiter rateLimiter;
 
+	@Ignore
 	@Test
 	public void redisRateLimiterWorks() throws Exception {
 		assumeThat("Ignore on Circle",
