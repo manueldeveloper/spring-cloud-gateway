@@ -1100,7 +1100,26 @@ In the example above, CORS requests will be allowed from requests that originate
 
 == Actuator API
 
-TODO: document the `/gateway` actuator endpoint
+=== Enable actuator API
+
+Actuator API can be enabled including the following maven dependency:
+
+.pom.xml
+[source,xml]
+----
+    <dependencies>
+        ...
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        ...
+    </dependencies>
+----
+
+=== Available API
+
+Actuator API is exposed to the following context: `/actuator/gateway`
 
 == Developer Guide
 
