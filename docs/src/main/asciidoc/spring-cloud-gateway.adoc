@@ -1119,7 +1119,77 @@ Actuator API can be enabled including the following maven dependency:
 
 === Available API
 
-Actuator API is exposed to the following context: `/actuator/gateway`
+Actuator API is exposed to the following context: `/actuator/gateway`:
+
+* `refresh`
+
+.`refresh` end-point
+|===
+|*Method*| POST
+|*Description*| Refresh internal routes
+|*URL Parameters*| -
+|*Body*| -
+|*Response*| -
+|===
+
+* `globalfilters`
+* `routefilters`
+* `routes`
+
+.`routes` end-point
+|===
+|*Method*| GET
+|*Description*| Returns all configured routes
+|*URL Parameters*| -
+|*Body*| -
+|*Response*
+a|
+.Response
+[source,json]
+----
+[
+    ...,
+    {
+        "routes_id":        <string>,
+        "order":            <int>,
+        "route_definition": <Route>
+    }
+    ...,
+]
+----
+
+.Route
+[source,json]
+----
+{
+    "id":           <string>,
+    "uri":          <string>,
+    "order":        <int>,
+    "predicates":   [<Predicate>],
+    "filters":      [<Filter>]
+}
+----
+
+.Predicate
+[source,json]
+----
+{
+    "name": <string>,
+    "args": <Object>
+}
+----
+
+.Filter
+[source,json]
+----
+{
+    "name": <string>,
+    "args": <Object>
+}
+----
+|===
+* `routes/{id}`
+* `routes/{id}/combinedfilters`
 
 == Developer Guide
 
